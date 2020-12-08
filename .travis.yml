@@ -8,7 +8,7 @@ before_install:
   - docker build -t prem/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true stephengrider/react-test npm test
+  - docker run -e CI=true prem/react-test npm test
 
 after_success:
   - docker build -t prem/multi-client ./client
